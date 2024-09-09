@@ -105,7 +105,7 @@ To run tests, run the following command
 ```
 ## Running Postman Tests
 
-Refresh and seed database running the following command:
+Clear cache:
 
 ```bash
   php artisan cache:clear
