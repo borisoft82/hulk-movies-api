@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "011ce93d-89c9-4248-a54d-b4510e71ec6f",
+		"name": "Movies Filters - Favorites",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28218664"
+	},
+	"item": [
+		{
+			"name": "Add to favorites",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "movieId",
+							"value": "28",
+							"type": "text"
+						},
+						{
+							"key": "favoriteMovie",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies/favorite",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove from favorites",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "movieId",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "favoriteMovie",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies/favorite",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follow user favorite movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/users/favorite",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/movies/filter?include=user,category&filter[createdAt]=2024-09-05,2024-09-30&sort=-id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "include",
+							"value": "user,category"
+						},
+						{
+							"key": "filter[id]",
+							"value": "1,3",
+							"disabled": true
+						},
+						{
+							"key": "filter[title]",
+							"value": "*adipisci*",
+							"disabled": true
+						},
+						{
+							"key": "filter[storyline]",
+							"value": "*molestiae*",
+							"disabled": true
+						},
+						{
+							"key": "filter[cast]",
+							"value": "Krystina O'Hara",
+							"disabled": true
+						},
+						{
+							"key": "filter[director]",
+							"value": "Mr. Julio Wolf",
+							"disabled": true
+						},
+						{
+							"key": "filter[createdAt]",
+							"value": "2024-09-05,2024-09-30"
+						},
+						{
+							"key": "filter[updatedAt]",
+							"value": "2024-09-05,2024-09-30",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "-id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter movies by specific user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/users/2/movies?include=user&filter[updatedAt]=2024-09-05,2024-09-30&sort=-title",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"2",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "include",
+							"value": "user"
+						},
+						{
+							"key": "filter[id]",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "filter[title]",
+							"value": "*quis*",
+							"disabled": true
+						},
+						{
+							"key": "filter[storyline]",
+							"value": "*molestiae*",
+							"disabled": true
+						},
+						{
+							"key": "filter[cast]",
+							"value": "Krystina O'Hara",
+							"disabled": true
+						},
+						{
+							"key": "filter[director]",
+							"value": "Mr. Julio Wolf",
+							"disabled": true
+						},
+						{
+							"key": "filter[createdAt]",
+							"value": "2024-09-05,2024-09-30",
+							"disabled": true
+						},
+						{
+							"key": "filter[updatedAt]",
+							"value": "2024-09-05,2024-09-30"
+						},
+						{
+							"key": "sort",
+							"value": "-title"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

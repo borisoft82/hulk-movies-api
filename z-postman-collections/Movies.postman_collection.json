@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "6f3fe760-b25b-4bae-977b-e0b29c678b96",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28218664"
+	},
+	"item": [
+		{
+			"name": "Get all movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/movies",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Movie title\",\r\n    \"slug\": \"movie-title\",\r\n    \"storyline\": \"Movie story\",\r\n    \"image\": \"https://via.placeholder.com/640x480.png/00ee88?text=recusandae\",\r\n    \"director\": \"Movie director\",\r\n    \"writer\": \"Movie writer\",\r\n    \"cast\": \"Movie cast\",\r\n    \"category_id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/movies/31",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Movie updated\",\r\n    \"slug\": \"movie-updated\",\r\n    \"director\": \"Director updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies/update/31",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"update",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/movies/delete/31",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						"delete",
+						"31"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
